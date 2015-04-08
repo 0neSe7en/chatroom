@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block nav %}
+{% end %}
+{% block body %}
+    <div class="row">
+        <div class="small-6 small-offset-3 columns">
+            <form action="/login" method="post">
+                <fieldset>
+                    {% raw xsrf_form_html() %}
+                    <legend>欢迎来到聊天室</legend>
+                    <div class="small-12 columns">
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <input type="text" placeholder="聊天室名称" name="roomname">
+                            </div>
+                        </div>
+                      <div class="row collapse postfix-round">
+                        <div class="small-10 columns">
+                          <input type="text" placeholder="请输入昵称" name="username" id="username" required>
+                        </div>
+                        <div class="small-2 columns">
+                            <input type="submit" value="Chat!" class="button postfix">
+                        </div>
+                      </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% end %}

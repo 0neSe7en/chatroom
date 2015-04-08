@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在线聊天室 - {{pos}}</title>
+  <link rel="stylesheet" href="{{static_url('components/semantic-ui/dist/semantic.min.css')}}">
+    {% block custom_css %} {% end %}
+</head>
+<body>
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name"><h1><a href="#">在线聊天室</a></h1></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li class="has-form">
+            <div class="row collapse">
+              <div class="large-8 small-9 columns">
+                <input type="text" placeholder="查找聊天室">
+              </div>
+              <div class="large-4 small-3 columns">
+                <a href="/search" class="active button expand">Search</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Top Bar Right Nav Elements -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li class="has-form">
+            <a href="/logout" class="button">Log out</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    {% block body %} {% end %}
+  <script src="{{static_url('components/semantic-ui/dist/semantic.min.js')}}"></script>
+  <script src="{{static_url('components/jquery/diss/jquery.min.js')}}"></script>
+    {% block custom_js %} {% end %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+    <!--{{username}} is in the chatting room-->
+    <div>
+        <ul id="users">
+        </ul>
+    </div>
+    <div>
+        <ul id="messages">
+        </ul>
+    </div>
+    <form>
+        <input type="text" name="message" class="message">
+        <input type="submit">
+    </form>
+{% end %}
+
+{% block custom_js %}
+    <script type="application/javascript" src="{{static_url('scripts/chat.js')}}"></script>
+{% end %}
