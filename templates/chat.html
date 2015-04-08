@@ -1,18 +1,49 @@
 {% extends "base.html" %}
+{% block custom_css %}
+    <link rel="stylesheet" href="{{static_url('css/chat.css')}}">
+{% end %}
 {% block body %}
     <!--{{username}} is in the chatting room-->
-    <div>
-        <ul id="users">
-        </ul>
+    <div class="row">
+        <div class="sidebar small-3">
+        <div class="off-canvas-wrap" data-offcanvas>
+          <div class="inner-wrap">
+            <nav class="tab-bar">
+              <section class="middle tab-bar-section">
+                <h1 class="title">聊天</h1>
+              </section>
+              <section class="left-small">
+                <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+              </section>
+            </nav>
+            <aside class="left-off-canvas-menu">
+              <ul class="off-canvas-list" id="users">
+                <li><label>在线用户</label></li>
+                  <li class="user">{{username}}</li>
+              </ul>
+            </aside>
+            <section>
+                <ul id="messages" class="no-bullet"></ul>
+                <form>
+                    <div class="row collapse postfix-round">
+                        <div class="small-9 columns">
+                          <input type="text" name="message" id="send-text">
+                        </div>
+                        <div class="small-3 columns">
+                            <input type="submit" class="button postfix" value="Send!">
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <a class="exit-off-canvas"></a>
+          </div>
+        </div>
     </div>
-    <div>
-        <ul id="messages">
-        </ul>
+        <div class="small-9 small-offset-3 columns">
+        <!-- Foundation Grid -->
+        </div>
     </div>
-    <form>
-        <input type="text" name="message" class="message">
-        <input type="submit">
-    </form>
+
 {% end %}
 
 {% block custom_js %}

@@ -16,7 +16,8 @@ $(document).ready(function() {
             $("#messages").append(json_data.info.map(parse_message))
         }
         else if (json_data.type=='user_status'){
-            $("#users").html(json_data.info.map(parse_user).join(''))
+            $(".user").replaceWith(json_data.info.map(parse_user).join(''));
+            //$("#users").html(json_data.info.map(parse_user).join(''))
         }
         console.log("Message is coming", json_data);
     };
@@ -26,7 +27,7 @@ $(document).ready(function() {
     };
 
     $('form').submit(function(){
-        submit_button = $(this).find('input.message');
+        submit_button = $("#send-text");
         websocket.send(submit_button.val());
         this.reset();
         return false;
@@ -34,10 +35,14 @@ $(document).ready(function() {
 });
 
 function parse_message(message){
-    return "<li><h4>" + message.username + "</h4><small>" + message.date + "</small><p>" + message.message + "</p></li>"
+    date = new Date(message.date);
+    date_code = '<span class="label round secondary">' + date.toLocaleString() + '</span>';
+    user_code = '<span class="username">' + message.username + '</span>';
+    message_code = '<span class="message">' + message.message + '</span>';
+    return '<li>' + user_code + date_code + message_code + '</li>'
 }
 
 function parse_user(user){
     console.log(user);
-    return "<li>"+user.username+"</li>"
+    return '<li class="user"><a href="#">'+user.username+'</a></li>'
 }

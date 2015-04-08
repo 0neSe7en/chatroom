@@ -1,0 +1,39 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 2.8125rem;
+    z-index: 1000;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #484848;
+}
+
+.username {
+    font-weight: 900;
+    display: inline;
+    padding-right: .25rem;
+    color: #e7e7e7 !important;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.message {
+    font-size: 15px;
+    color: #e7e7e7;
+    line-height: 22px;
+    margin-top: -1px;
+    display: block;
+    min-height: 1rem;
+}
+
+#messages {
+    padding-left: 10px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+#messages li{
+    padding-bottom: 5px;
+}

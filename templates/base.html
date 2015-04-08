@@ -6,8 +6,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>在线聊天室 - {{pos}}</title>
-  <link rel="stylesheet" href="{{static_url('components/semantic-ui/dist/semantic.min.css')}}">
+  <link rel="stylesheet" href="{{static_url('components/foundation/css/normalize.css')}}">
+  <link rel="stylesheet" href="{{static_url('components/foundation/css/foundation.css')}}">
     {% block custom_css %} {% end %}
+    <script src="{{static_url('components/foundation/js/vendor/modernizr.js')}}"></script>
 </head>
 <body>
     <nav class="top-bar" data-topbar role="navigation">
@@ -40,8 +42,11 @@
     </nav>
 
     {% block body %} {% end %}
-  <script src="{{static_url('components/semantic-ui/dist/semantic.min.js')}}"></script>
-  <script src="{{static_url('components/jquery/diss/jquery.min.js')}}"></script>
+  <script src="{{static_url('components/foundation/js/vendor/jquery.js')}}"></script>
+  <script src="{{static_url('components/foundation/js/foundation.min.js')}}"></script>
     {% block custom_js %} {% end %}
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>
